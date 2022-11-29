@@ -36,5 +36,10 @@ services:
     environment:
       GEOSERVER_ADMIN_PASSWORD: secret
       GEOSERVER_ADMIN_USER: admin
+      STABLE_EXTENSIONS: css-plugin
 
+      GEOSERVER_DATA_DIR: /data
+
+    volumes:
+    - /home/gregg/Documents/geoserver:/data
 
