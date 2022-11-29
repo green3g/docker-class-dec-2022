@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+  database:
+
+    # image name
+    image: postgis/postgis:15-3.3-alpine
+
+    # port mapping
+    ports:
+    - 5432:5432
+
+    # volume mapping
+    volumes:
+    - /home/gregg/Documents/postgres:/var/lib/postgresql/data
+
+    environment: 
+      POSTGRES_PASSWORD: secret
+
+  pgadmin:
+    image: dpage/pgadmin4:6.16
+
+    ports:
+    - 8888:80
+
+    environment: 
+      PGADMIN_DEFAULT_EMAIL: roemhildtg@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: secret
+
+  geoserver: 
+    image: kartoza/geoserver:2.22.0
+
+    ports: 
+    - 8080:8080
+
+    environment:
+      GEOSERVER_ADMIN_PASSWORD: secret
+      GEOSERVER_ADMIN_USER: admin
+
+
