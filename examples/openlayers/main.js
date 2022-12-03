@@ -12,7 +12,7 @@ const layers = [
     extent: [-13884991, 2870341, -7455066, 6338219],
     source: new TileWMS({
       url: 'http://localhost:8080/geoserver/wms',
-      params: {'LAYERS': 'gregg:parcels_washington', 'TILED': true},
+      params: {'LAYERS': 'greggs:Single parts', 'TILED': true},
       serverType: 'geoserver',
       // Countries have transparency, so do not fade tiles:
       transition: 0,
